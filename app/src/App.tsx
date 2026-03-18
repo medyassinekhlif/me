@@ -182,9 +182,6 @@ function App() {
             <a href="#youtube" className="transition hover:text-rose-200">
               YouTube
             </a>
-            <a href="#contact" className="transition hover:text-violet-200">
-              Contact
-            </a>
           </div>
           <a
             href="https://github.com/medyassinekhlif"
@@ -294,7 +291,7 @@ function App() {
         </div>
       </section>
 
-      <section id="contact" className="mx-auto w-full max-w-6xl space-y-8 px-4 py-10 md:px-6 md:py-14">
+      <section className="mx-auto w-full max-w-6xl space-y-8 px-4 py-10 md:px-6 md:py-14">
         <article id="youtube" className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <h2 className="font-display text-2xl font-semibold text-rose-300">
