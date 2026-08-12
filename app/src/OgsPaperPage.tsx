@@ -330,7 +330,7 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
 
   if (block.text.startsWith('Keywords:')) {
     return (
-      <p className="rounded-lg border border-emerald-200 bg-emerald-100 p-4 text-sm leading-7 text-emerald-900">
+      <p className="rounded-lg border border-fuchsia-300 bg-fuchsia-200 p-4 text-sm leading-7 text-fuchsia-900">
         {renderInline(block.text)}
       </p>
     )
@@ -347,27 +347,27 @@ function OgsPaperPage() {
   const outline = blocks.filter((block): block is HeadingBlock => block.kind === 'heading' && block.level === 2)
 
   return (
-    <main className="min-h-screen font-body text-slate-100">
-      <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
+    <main className="min-h-screen bg-slate-100 font-body text-slate-900">
+      <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8">
           <a
             href={baseUrl}
-            className="inline-flex min-w-0 items-center gap-2 font-display text-base font-semibold text-sky-200 sm:text-lg"
+            className="inline-flex min-w-0 items-center gap-2 font-display text-base font-semibold text-slate-900 sm:text-lg"
           >
             <img src={logoUrl} alt="Logo" className="h-10 w-10 pr-1" />
             <span className="truncate">Med Yassine Khlif</span>
           </a>
-          <div className="hidden items-center gap-5 text-sm text-slate-200 lg:flex">
-            <a href="#abstract" className="transition hover:text-cyan-200">
+          <div className="hidden items-center gap-5 text-sm text-slate-700 lg:flex">
+            <a href="#abstract" className="transition hover:text-cyan-700">
               Abstract
             </a>
-            <a href="#rendering" className="transition hover:text-emerald-200">
+            <a href="#rendering" className="transition hover:text-emerald-700">
               Rendering
             </a>
-            <a href="#synthesis" className="transition hover:text-amber-200">
+            <a href="#synthesis" className="transition hover:text-amber-700">
               Architecture
             </a>
-            <a href="#references" className="transition hover:text-rose-200">
+            <a href="#references" className="transition hover:text-rose-700">
               References
             </a>
           </div>
@@ -382,18 +382,18 @@ function OgsPaperPage() {
         </nav>
       </header>
 
-      <section className="relative isolate overflow-hidden border-b border-slate-800 pt-20">
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:44px_44px]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(14,165,233,0.16),transparent_38%,rgba(16,185,129,0.10)_66%,rgba(251,191,36,0.10))]" />
+      <section className="relative isolate overflow-hidden border-b border-slate-200 bg-slate-50 pt-20">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:44px_44px]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(14,165,233,0.08),transparent_38%,rgba(16,185,129,0.06)_66%,rgba(251,191,36,0.06))]" />
         <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
           <div className="max-w-4xl">
-            <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
+            <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
               From Black Boxes to Open Formats
             </h1>
-            <p className="mt-5 text-xl leading-8 text-slate-200 md:text-2xl">
+            <p className="mt-5 text-xl leading-8 text-slate-700 md:text-2xl">
               The audio engine behind {renderInline('Open Generative Studios')}
             </p>
-            <p className="mt-4 max-w-3xl text-base leading-8 text-slate-300">
+            <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
               A technical report on the audio-rendering architecture of Open Generative Studios.
               Prepared by Mohamed Yassine Khlif, April 2026.
             </p>
@@ -401,8 +401,8 @@ function OgsPaperPage() {
         </div>
       </section>
 
-      <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 md:px-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
-        <article className="min-w-0 space-y-5 rounded-3xl border border-slate-200/50 bg-white/95 p-8 shadow-xl shadow-slate-900/10 text-slate-900">
+      <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 md:px-8 lg:grid-cols-[minmax(0,1fr)_18rem] bg-slate-100">
+        <article className="min-w-0 space-y-5 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-300/30 text-slate-900">
           <div className="space-y-8">
             {blocks.map((block, index) => (
               <PaperBlock key={`${block.kind}-${index}`} block={block} />
@@ -411,14 +411,14 @@ function OgsPaperPage() {
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
-          <section className="rounded-lg border border-slate-800 bg-slate-900/80 p-4">
-            <h2 className="font-display text-base font-semibold text-slate-100">Contents</h2>
+          <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/50">
+            <h2 className="font-display text-base font-semibold text-slate-900">Contents</h2>
             <nav className="mt-3 space-y-1 text-sm">
               {outline.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-md px-2 py-1.5 text-slate-300 transition hover:bg-slate-800 hover:text-cyan-200"
+                  className="block rounded-md px-2 py-1.5 text-slate-700 transition hover:bg-slate-100 hover:text-cyan-700"
                 >
                   {item.text.replace(/^\d+\.\s*/, '')}
                 </a>
@@ -426,10 +426,10 @@ function OgsPaperPage() {
             </nav>
           </section>
 
-          <section className="rounded-lg border border-slate-800 bg-slate-900/80 p-4">
+          <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/50">
             <div className="flex items-center gap-2">
-              <FaCodeBranch className="text-emerald-300" />
-              <h2 className="font-display text-base font-semibold text-slate-100">
+              <FaCodeBranch className="text-emerald-500" />
+              <h2 className="font-display text-base font-semibold text-slate-900">
                 Technical Links
               </h2>
             </div>
@@ -440,7 +440,7 @@ function OgsPaperPage() {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-slate-700 bg-slate-950 px-3 py-1 text-xs font-semibold text-slate-300 transition hover:border-cyan-300/60 hover:text-cyan-100"
+                  className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700 transition hover:border-cyan-300/60 hover:text-cyan-700"
                 >
                   {label}
                 </a>
