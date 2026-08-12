@@ -330,7 +330,7 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
 
   if (block.text.startsWith('Keywords:')) {
     return (
-      <p className="rounded-lg border border-fuchsia-300 bg-fuchsia-200 p-4 text-sm leading-7 text-fuchsia-900">
+      <p className="rounded-lg border border-cyan-200 bg-cyan-50 p-4 text-sm leading-7 text-cyan-800">
         {renderInline(block.text)}
       </p>
     )
@@ -348,8 +348,8 @@ function OgsPaperPage() {
 
   return (
     <main className="min-h-screen bg-slate-100 font-body text-slate-900">
-      <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
-        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8">
+      <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-xl">
+        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 rounded-3xl bg-slate-100/95 border border-slate-200 shadow-sm">
           <a
             href={baseUrl}
             className="inline-flex min-w-0 items-center gap-2 font-display text-base font-semibold text-slate-900 sm:text-lg"
@@ -375,7 +375,7 @@ function OgsPaperPage() {
             href={externalLinks.openGenerativeStudios}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-cyan-300/50 bg-cyan-300/15 px-3 py-1.5 text-xs font-semibold text-cyan-100 transition hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-full bg-cyan-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-cyan-800"
           >
             Open Generative Studios <FaArrowRight className="text-[0.65rem]" />
           </a>
