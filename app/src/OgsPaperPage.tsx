@@ -342,8 +342,8 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
 
 function OgsPaperPage() {
   const baseUrl = import.meta.env.BASE_URL
-  const logoUrl = '/logo.webp'
-  const navLogoUrl = '/nav-logo.webp'
+  const logoUrl = 'https://github.com/medyassinekhlif/open-generative-studios/blob/main/logo.png'
+  const navLogoUrl = 'https://github.com/medyassinekhlif/open-generative-studios/blob/main/nav-logo.png'
   const blocks = useMemo(() => parseMarkdown(paperSource), [])
   const outline = blocks.filter((block): block is HeadingBlock => block.kind === 'heading' && block.level === 2)
 
@@ -358,9 +358,6 @@ function OgsPaperPage() {
             <img
               src={navLogoUrl}
               alt="OGS"
-              onError={(e) => {
-                ;(e.currentTarget as HTMLImageElement).src = `${import.meta.env.BASE_URL}nav-logo.webp`
-              }}
               className="h-10 w-10 pr-1 object-contain"
             />
             <span className="truncate">Open Generative Studios</span>
@@ -382,9 +379,6 @@ function OgsPaperPage() {
           <img
             src={logoUrl}
             alt="Logo"
-            onError={(e) => {
-              ;(e.currentTarget as HTMLImageElement).src = `${import.meta.env.BASE_URL}logo.webp`
-            }}
             className="pointer-events-none absolute left-0 -bottom-10 z-0 h-56 w-56 -rotate-12 opacity-20 sm:h-72 sm:w-72"
           />
           <div className="max-w-4xl relative z-10">
