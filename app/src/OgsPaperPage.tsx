@@ -256,11 +256,11 @@ function renderInline(text: string) {
 
 function PaperTable({ block }: { block: TableBlock }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-300 bg-slate-50">
+    <div className="overflow-hidden border border-slate-300 bg-slate-50">
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
           {block.caption ? (
-            <caption className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+            <caption className="px-4 py-3 text-center text-sm font-medium text-slate-700">
               {renderInline(block.caption)}
             </caption>
           ) : null}
@@ -348,8 +348,8 @@ function OgsPaperPage() {
 
   return (
     <main className="min-h-screen bg-slate-100 font-body text-slate-900">
-      <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-xl">
-        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8 rounded-3xl bg-slate-100/95 border border-slate-200 shadow-sm">
+      <header className="fixed inset-x-0 top-0 z-40 bg-slate-50/70 backdrop-blur-lg border-b border-slate-200/40 shadow-sm">
+        <nav className="flex w-full items-center justify-between gap-3 px-6 py-3 md:px-8">
           <a
             href={baseUrl}
             className="inline-flex min-w-0 items-center gap-2 font-display text-base font-semibold text-slate-900 sm:text-lg"
@@ -385,8 +385,9 @@ function OgsPaperPage() {
       <section className="relative isolate overflow-hidden border-b border-slate-200 bg-slate-50 pt-20">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:44px_44px]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(14,165,233,0.08),transparent_38%,rgba(16,185,129,0.06)_66%,rgba(251,191,36,0.06))]" />
-        <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
-          <div className="max-w-4xl">
+        <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16 relative">
+          <img src={`${baseUrl}logo.png`} alt="Logo" className="pointer-events-none absolute left-0 -bottom-10 -z-0 h-56 w-56 -rotate-12 opacity-18 sm:h-72 sm:w-72" />
+          <div className="max-w-4xl relative z-10">
             <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
               From Black Boxes to Open Formats
             </h1>
@@ -402,7 +403,7 @@ function OgsPaperPage() {
       </section>
 
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 md:px-8 lg:grid-cols-[minmax(0,1fr)_18rem] bg-slate-100">
-        <article className="min-w-0 space-y-5 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-300/30 text-slate-900">
+        <article className="min-w-0 space-y-5 rounded-lg border border-slate-200 bg-white p-8 shadow-xl shadow-slate-300/30 text-slate-900">
           <div className="space-y-8">
             {blocks.map((block, index) => (
               <PaperBlock key={`${block.kind}-${index}`} block={block} />
@@ -452,7 +453,7 @@ function OgsPaperPage() {
             href="https://github.com/medyassinekhlif"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between gap-3 rounded-lg border border-amber-300/30 bg-amber-300/10 p-4 text-sm font-semibold text-amber-100 transition hover:border-amber-200/70"
+            className="flex items-center justify-between gap-3 rounded-lg bg-cyan-700 p-4 text-sm font-semibold text-white transition hover:bg-cyan-800"
           >
             <span className="inline-flex items-center gap-2">
               <FaGithub /> GitHub
