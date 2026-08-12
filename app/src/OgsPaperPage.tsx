@@ -349,23 +349,28 @@ function OgsPaperPage() {
 
   return (
     <main className="min-h-screen bg-slate-100 font-body text-slate-900">
-      <header className="fixed inset-x-0 top-0 z-40 bg-emerald-50/70 backdrop-blur-lg border-b border-emerald-200/40 shadow-sm">
+      <header className="fixed inset-x-0 top-0 z-40 bg-white/90 backdrop-blur-lg border-b border-slate-200/40 shadow-sm">
         <nav className="flex w-full items-center justify-between gap-3 px-6 py-3 md:px-8">
           <a
             href={externalLinks.openGenerativeStudios}
             className="inline-flex min-w-0 items-center gap-2 font-display text-base font-semibold text-slate-900 sm:text-lg"
           >
-            <img src={navLogoUrl} alt="OGS" className="h-10 w-10 pr-1 object-contain" />
+            <img
+              src={navLogoUrl}
+              alt="OGS"
+              onError={(e) => {
+                ;(e.currentTarget as HTMLImageElement).src = `${import.meta.env.BASE_URL}nav-logo.webp`
+              }}
+              className="h-10 w-10 pr-1 object-contain"
+            />
             <span className="truncate">Open Generative Studios</span>
           </a>
 
           <a
-            href={externalLinks.openGenerativeStudios}
-            target="_blank"
-            rel="noreferrer"
+            href="https://medyassinekhlif.github.io/me"
             className="inline-flex items-center gap-2 rounded-full bg-cyan-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-cyan-800"
           >
-            Open Generative Studios <FaArrowRight className="text-[0.65rem]" />
+            Get back <FaArrowRight className="text-[0.65rem]" />
           </a>
         </nav>
       </header>
@@ -377,6 +382,9 @@ function OgsPaperPage() {
           <img
             src={logoUrl}
             alt="Logo"
+            onError={(e) => {
+              ;(e.currentTarget as HTMLImageElement).src = `${import.meta.env.BASE_URL}logo.webp`
+            }}
             className="pointer-events-none absolute left-0 -bottom-10 z-0 h-56 w-56 -rotate-12 opacity-20 sm:h-72 sm:w-72"
           />
           <div className="max-w-4xl relative z-10">
