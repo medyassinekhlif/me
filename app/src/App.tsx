@@ -57,6 +57,7 @@ function PortfolioPage() {
       setShowSpline(event.matches)
     }
 
+    setShowSpline(mediaQuery.matches)
     mediaQuery.addEventListener('change', handleViewportChange)
 
     return () => {
@@ -401,7 +402,6 @@ function PortfolioPage() {
               <FaGithub /> github.com/medyassinekhlif
             </a>
           </div>
-
           <a
             href={ogsPageUrl}
             className="mt-5 block overflow-hidden rounded-2xl border border-cyan-300/30 bg-slate-950/90 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/60"
@@ -456,7 +456,6 @@ function PortfolioPage() {
               <FaArrowRight /> Research paper
             </a>
           </div>
-
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {githubSnapshot.map((item) => (
               <div
@@ -542,4 +541,3 @@ function PortfolioPage() {
 }
 
 export default App
-
