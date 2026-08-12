@@ -65,6 +65,10 @@ function PortfolioPage() {
     }
   }, [])
 
+    const [githubAvatarUrl, setGithubAvatarUrl] = useState<string>(
+      'https://avatars.githubusercontent.com/u/67220740?v=4',
+    )
+
   const highlights: HighlightCard[] = [
     {
       id: 'EITECH',
@@ -148,9 +152,20 @@ function PortfolioPage() {
   ]
 
   const youtubeChannelUrl = 'https://www.youtube.com/@mohamedyassinekhlif'
+
+        useEffect(() => {
+          // try to fetch the live GitHub avatar for the profile; fallback to the static URL above
+          fetch('https://api.github.com/users/medyassinekhlif')
+            .then((res) => (res.ok ? res.json() : null))
+            .then((data) => {
+              if (data && data.avatar_url) setGithubAvatarUrl(data.avatar_url)
+            })
+            .catch(() => {
+              /* ignore network errors and keep fallback */
+            })
+        }, [])
   const youtubeVideoUrl = 'https://www.youtube.com/watch?v=TL5n5-ucbo8&t=31s'
   const youtubeEmbedUrl = 'https://www.youtube.com/embed/TL5n5-ucbo8?start=31'
-  const githubAvatarUrl = 'https://github.com/medyassinekhlif.png'
   const ogsPlatformUrl = 'https://opengenerativestudios.studio/'
   const ogsLogoUrl =
     'https://opengenerativestudios.studio/_next/image?url=%2Fassets%2Fnav-logo.png&w=384&q=75'
@@ -281,8 +296,8 @@ function PortfolioPage() {
                     type="button"
                     onClick={() => setActiveCard(card.id)}
                     className={`rounded-xl border p-4 text-left transition duration-200 hover:-translate-y-1 hover:shadow-lg ${activeCard === card.id
-                        ? 'border-emerald-300/70 bg-emerald-300/15'
-                        : 'border-white/15 bg-slate-900/45'
+                      ? 'border-emerald-300/70 bg-emerald-300/15'
+                      : 'border-white/15 bg-slate-900/45'
                       }`}
                   >
                     <p className="text-sm font-semibold text-slate-100">{card.title}</p>
@@ -400,11 +415,11 @@ function PortfolioPage() {
             className="mt-5 block overflow-hidden rounded-2xl border border-cyan-300/30 bg-slate-950/90 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/60"
           >
             <div className="grid gap-0 md:grid-cols-[180px_1fr]">
-              <div className="h-48 bg-white md:h-full">
+              <div className="flex h-48 items-center justify-center overflow-hidden bg-white md:h-full">
                 <img
                   src={ogsLogoUrl}
                   alt="Open Generative Studios"
-                  className="h-full w-full object-cover"
+                  className="h-full w-auto max-w-full object-contain"
                 />
               </div>
               <div className="p-5 md:p-6">

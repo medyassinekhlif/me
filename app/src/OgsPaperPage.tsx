@@ -348,7 +348,7 @@ function OgsPaperPage() {
 
   return (
     <main className="min-h-screen bg-slate-100 font-body text-slate-900">
-      <header className="fixed inset-x-0 top-0 z-40 bg-slate-50/70 backdrop-blur-lg border-b border-slate-200/40 shadow-sm">
+      <header className="fixed inset-x-0 top-0 z-40 bg-emerald-50/70 backdrop-blur-lg border-b border-emerald-200/40 shadow-sm">
         <nav className="flex w-full items-center justify-between gap-3 px-6 py-3 md:px-8">
           <a
             href={baseUrl}
@@ -357,20 +357,7 @@ function OgsPaperPage() {
             <img src={logoUrl} alt="Logo" className="h-10 w-10 pr-1" />
             <span className="truncate">Med Yassine Khlif</span>
           </a>
-          <div className="hidden items-center gap-5 text-sm text-slate-700 lg:flex">
-            <a href="#abstract" className="transition hover:text-cyan-700">
-              Abstract
-            </a>
-            <a href="#rendering" className="transition hover:text-emerald-700">
-              Rendering
-            </a>
-            <a href="#synthesis" className="transition hover:text-amber-700">
-              Architecture
-            </a>
-            <a href="#references" className="transition hover:text-rose-700">
-              References
-            </a>
-          </div>
+
           <a
             href={externalLinks.openGenerativeStudios}
             target="_blank"
@@ -386,7 +373,11 @@ function OgsPaperPage() {
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:44px_44px]" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(14,165,233,0.08),transparent_38%,rgba(16,185,129,0.06)_66%,rgba(251,191,36,0.06))]" />
         <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16 relative">
-          <img src={`${baseUrl}logo.png`} alt="Logo" className="pointer-events-none absolute left-0 -bottom-10 -z-0 h-56 w-56 -rotate-12 opacity-18 sm:h-72 sm:w-72" />
+          <img
+            src={`${baseUrl}logo.png`}
+            alt="Logo"
+            className="pointer-events-none absolute left-0 -bottom-10 z-0 h-56 w-56 -rotate-12 opacity-20 sm:h-72 sm:w-72"
+          />
           <div className="max-w-4xl relative z-10">
             <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
               From Black Boxes to Open Formats
@@ -396,7 +387,11 @@ function OgsPaperPage() {
             </p>
             <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
               A technical report on the audio-rendering architecture of Open Generative Studios.
+            </p>
+            <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
+
               Prepared by Mohamed Yassine Khlif, April 2026.
+
             </p>
           </div>
         </div>
