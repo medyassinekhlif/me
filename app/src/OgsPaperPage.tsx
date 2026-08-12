@@ -1,5 +1,5 @@
 ﻿import { useMemo } from 'react'
-import { FaArrowRight, FaCodeBranch, FaGithub, FaStar } from 'react-icons/fa6'
+import { FaArrowRight, FaCodeBranch, FaGithub } from 'react-icons/fa6'
 import paperSource from './content/ogs-paper.md?raw'
 
 type HeadingBlock = {
@@ -101,14 +101,6 @@ const termMatcher = new RegExp(
   `(${sortedLinkedTerms.map(([term]) => escapeRegExp(term)).join('|')})`,
   'gi',
 )
-
-const architectureStages = [
-  ['Prompt and seed', 'Deterministic input contract'],
-  ['Markov melody', 'Third-order transition matrices'],
-  ['MIDI humanization', 'Random forest velocity and timing'],
-  ['SFZ and sfizz', 'Open sample definitions and CPU rendering'],
-  ['Audio and score', 'Exportable listening and notation artifacts'],
-]
 
 const technicalLinks = [
   ['Open Generative Studios', externalLinks.openGenerativeStudios],
@@ -254,7 +246,7 @@ function renderInline(text: string) {
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="font-semibold text-cyan-200 underline decoration-cyan-300/40 underline-offset-4 transition hover:text-white hover:decoration-cyan-100"
+        className="font-semibold text-cyan-700 underline decoration-cyan-200 underline-offset-4 transition hover:text-cyan-900 hover:decoration-cyan-400"
       >
         {part}
       </a>
@@ -264,15 +256,15 @@ function renderInline(text: string) {
 
 function PaperTable({ block }: { block: TableBlock }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-950/70">
+    <div className="overflow-hidden rounded-lg border border-slate-300 bg-slate-50">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-800 text-left text-sm">
+        <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
           {block.caption ? (
-            <caption className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.14em] text-amber-200">
+            <caption className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
               {renderInline(block.caption)}
             </caption>
           ) : null}
-          <thead className="bg-slate-900/90 text-slate-100">
+          <thead className="bg-slate-100 text-slate-900">
             <tr>
               {block.headers.map((header) => (
                 <th key={header} scope="col" className="px-4 py-3 font-semibold">
@@ -281,13 +273,13 @@ function PaperTable({ block }: { block: TableBlock }) {
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800 text-slate-300">
+          <tbody className="divide-y divide-slate-200 text-slate-700">
             {block.rows.map((row) => (
               <tr key={row.join('|')} className="align-top">
                 {row.map((cell, index) => (
                   <td
                     key={`${row[0]}-${index}`}
-                    className={`px-4 py-3 ${index === 0 ? 'font-semibold text-slate-100' : ''}`}
+                    className={`px-4 py-3 ${index === 0 ? 'font-semibold text-slate-900' : ''}`}
                   >
                     {renderInline(cell)}
                   </td>
@@ -305,22 +297,22 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
   if (block.kind === 'heading') {
     if (block.level === 2) {
       return (
-        <h2 id={block.id} className="scroll-mt-24 pt-4 font-display text-2xl font-semibold text-slate-50 md:text-3xl">
+        <h2 id={block.id} className="scroll-mt-24 pt-4 font-display text-2xl font-semibold text-slate-950 md:text-3xl">
           {renderInline(block.text)}
         </h2>
       )
     }
 
-    return <h3 className="pt-2 font-display text-xl font-semibold text-sky-200">{renderInline(block.text)}</h3>
+    return <h3 className="pt-2 font-display text-xl font-semibold text-slate-800">{renderInline(block.text)}</h3>
   }
 
   if (block.kind === 'list') {
     const ListTag = block.ordered ? 'ol' : 'ul'
 
     return (
-      <ListTag className="space-y-3 text-base leading-8 text-slate-300">
+      <ListTag className="space-y-3 text-base leading-8 text-slate-800">
         {block.items.map((item) => (
-          <li key={item} className="rounded-lg border border-slate-800 bg-slate-950/60 p-4">
+          <li key={item} className="rounded-lg border border-slate-200 bg-slate-50 p-4">
             {renderInline(item)}
           </li>
         ))}
@@ -333,42 +325,20 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
   }
 
   if (block.kind === 'rule') {
-    return <hr className="border-slate-800" />
+    return <hr className="border-slate-200" />
   }
 
   if (block.text.startsWith('Keywords:')) {
     return (
-      <p className="rounded-lg border border-emerald-300/20 bg-emerald-300/10 p-4 text-sm leading-7 text-emerald-50">
+      <p className="rounded-lg border border-emerald-200 bg-emerald-100 p-4 text-sm leading-7 text-emerald-900">
         {renderInline(block.text)}
       </p>
     )
   }
 
-  return <p className="text-base leading-8 text-slate-300">{renderInline(block.text)}</p>
+  return <p className="text-base leading-8 text-slate-700">{renderInline(block.text)}</p>
 }
 
-function ArchitectureMap() {
-  return (
-    <div className="mt-8 grid gap-3 rounded-lg border border-slate-800 bg-slate-950/70 p-3 md:grid-cols-5">
-      {architectureStages.map(([title, detail], index) => (
-        <div key={title} className="min-h-28 rounded-md border border-slate-800 bg-slate-900/80 p-4">
-          <div className="flex items-center justify-between gap-3">
-            <span className="grid h-8 w-8 place-items-center rounded-full border border-emerald-300/40 bg-emerald-300/10 text-xs font-bold text-emerald-100">
-              {index + 1}
-            </span>
-            {index < architectureStages.length - 1 ? (
-              <FaArrowRight className="hidden text-slate-500 md:block" />
-            ) : (
-              <FaStar className="text-amber-300" />
-            )}
-          </div>
-          <p className="mt-4 text-sm font-semibold text-slate-100">{title}</p>
-          <p className="mt-2 text-xs leading-5 text-slate-400">{detail}</p>
-        </div>
-      ))}
-    </div>
-  )
-}
 
 function OgsPaperPage() {
   const baseUrl = import.meta.env.BASE_URL
@@ -417,9 +387,6 @@ function OgsPaperPage() {
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(14,165,233,0.16),transparent_38%,rgba(16,185,129,0.10)_66%,rgba(251,191,36,0.10))]" />
         <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16">
           <div className="max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">
-              Engineering report
-            </p>
             <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-white md:text-6xl">
               From Black Boxes to Open Formats
             </h1>
@@ -431,29 +398,16 @@ function OgsPaperPage() {
               Prepared by Mohamed Yassine Khlif, April 2026.
             </p>
           </div>
-
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            {[
-              ['Inspectable', 'MIDI, SFZ, and model artifacts stay readable.'],
-              ['CPU-only', 'The pipeline avoids GPU inference and DAW dependency.'],
-              ['Deployable', 'The default rendering path avoids activation-locked plugins.'],
-            ].map(([title, body]) => (
-              <div key={title} className="rounded-lg border border-white/10 bg-slate-950/70 p-4">
-                <p className="text-sm font-semibold text-slate-100">{title}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{body}</p>
-              </div>
-            ))}
-          </div>
-
-          <ArchitectureMap />
         </div>
       </section>
 
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 py-10 md:px-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
-        <article className="min-w-0 space-y-5">
-          {blocks.map((block, index) => (
-            <PaperBlock key={`${block.kind}-${index}`} block={block} />
-          ))}
+        <article className="min-w-0 space-y-5 rounded-3xl border border-slate-200/50 bg-white/95 p-8 shadow-xl shadow-slate-900/10 text-slate-900">
+          <div className="space-y-8">
+            {blocks.map((block, index) => (
+              <PaperBlock key={`${block.kind}-${index}`} block={block} />
+            ))}
+          </div>
         </article>
 
         <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
