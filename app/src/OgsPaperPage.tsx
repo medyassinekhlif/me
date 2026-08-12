@@ -341,7 +341,6 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
 
 
 function OgsPaperPage() {
-  const baseUrl = import.meta.env.BASE_URL
   const logoUrl = 'https://github.com/medyassinekhlif/open-generative-studios/blob/main/logo.png'
   const navLogoUrl = 'https://github.com/medyassinekhlif/open-generative-studios/blob/main/nav-logo.png'
   const blocks = useMemo(() => parseMarkdown(paperSource), [])
