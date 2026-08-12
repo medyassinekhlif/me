@@ -1,0 +1,138 @@
+.portfolio {
+  display: flex;
+  min-height: 100svh;
+}
+
+.hero-shell {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+}
+
+.content-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: min(460px, 42vw);
+  height: 100%;
+  padding: 56px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: right;
+  align-items: flex-end;
+  background:
+    linear-gradient(270deg, color-mix(in srgb, var(--bg) 78%, transparent), transparent),
+    radial-gradient(circle at 10% 10%, rgba(170, 59, 255, 0.22), transparent 45%);
+  backdrop-filter: blur(2px);
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.lead {
+  max-width: 36ch;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.button {
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.button.primary {
+  color: #fff;
+  background: linear-gradient(130deg, var(--accent), #7a1fc1);
+}
+
+.button.ghost {
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+}
+
+.social {
+  margin: 12px 0 0;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-h);
+  background: var(--social-bg);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.spline-wrap {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background: linear-gradient(190deg, rgba(170, 59, 255, 0.08), transparent 40%);
+}
+
+.spline-wrap canvas {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 980px) {
+  .hero-shell {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .content-panel {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 34px 20px;
+    text-align: left;
+    align-items: flex-start;
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--bg) 85%, transparent), transparent),
+      radial-gradient(circle at 10% 10%, rgba(170, 59, 255, 0.22), transparent 45%);
+    backdrop-filter: none;
+  }
+
+  .actions,
+  .social {
+    justify-content: flex-start;
+  }
+
+  .spline-wrap {
+    position: relative;
+    min-height: 66svh;
+  }
+}
