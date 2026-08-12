@@ -342,8 +342,8 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
 
 function OgsPaperPage() {
   const baseUrl = import.meta.env.BASE_URL
-  const logoUrl = `${baseUrl}logo.webp`
-  const navLogoUrl = `${baseUrl}nav-logo.webp`
+  const logoUrl = '/logo.webp'
+  const navLogoUrl = '/nav-logo.webp'
   const blocks = useMemo(() => parseMarkdown(paperSource), [])
   const outline = blocks.filter((block): block is HeadingBlock => block.kind === 'heading' && block.level === 2)
 
