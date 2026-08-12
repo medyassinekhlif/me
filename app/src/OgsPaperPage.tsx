@@ -246,7 +246,7 @@ function renderInline(text: string) {
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="font-semibold text-cyan-700 underline decoration-cyan-200 underline-offset-4 transition hover:text-cyan-900 hover:decoration-cyan-400"
+        className="font-semibold text-violet-700 underline decoration-violet-200 underline-offset-4 transition hover:text-violet-900 hover:decoration-violet-400"
       >
         {part}
       </a>
@@ -330,7 +330,7 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
 
   if (block.text.startsWith('Keywords:')) {
     return (
-      <p className="rounded-lg border border-cyan-200 bg-cyan-50 p-4 text-sm leading-7 text-cyan-800">
+      <p className="rounded-lg border border-violet-200 bg-violet-50 p-4 text-sm leading-7 text-violet-800">
         {renderInline(block.text)}
       </p>
     )
@@ -357,14 +357,13 @@ function OgsPaperPage() {
             <img
               src={navLogoUrl}
               alt="OGS"
-              className="h-10 w-10 pr-1 object-contain"
+              className="h-full max-h-12 w-auto object-contain"
             />
-            <span className="truncate">Open Generative Studios</span>
           </a>
 
           <a
             href="https://medyassinekhlif.github.io/me"
-            className="inline-flex items-center gap-2 rounded-full bg-cyan-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-cyan-800"
+            className="inline-flex items-center gap-2 rounded-full bg-violet-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-violet-800"
           >
             Get back <FaArrowRight className="text-[0.65rem]" />
           </a>
@@ -373,12 +372,12 @@ function OgsPaperPage() {
 
       <section className="relative isolate overflow-hidden border-b border-slate-200 bg-slate-50 pt-20">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(148,163,184,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.05)_1px,transparent_1px)] bg-[size:44px_44px]" />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(14,165,233,0.08),transparent_38%,rgba(16,185,129,0.06)_66%,rgba(251,191,36,0.06))]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(130deg,rgba(167,139,250,0.08),transparent_38%,rgba(139,92,246,0.06)_66%,rgba(196,181,253,0.06))]" />
         <div className="mx-auto w-full max-w-7xl px-4 py-12 md:px-8 md:py-16 relative">
           <img
             src={logoUrl}
             alt="Logo"
-            className="pointer-events-none absolute left-0 -bottom-10 z-0 h-56 w-56 -rotate-12 opacity-20 sm:h-72 sm:w-72"
+            className="pointer-events-none absolute left-0 -bottom-10 z-0 h-72 w-auto -rotate-12 opacity-20 sm:h-80"
           />
           <div className="max-w-4xl relative z-10">
             <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
@@ -416,7 +415,7 @@ function OgsPaperPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-md px-2 py-1.5 text-slate-700 transition hover:bg-slate-100 hover:text-cyan-700"
+                  className="block rounded-md px-2 py-1.5 text-slate-700 transition hover:bg-slate-100 hover:text-violet-700"
                 >
                   {item.text.replace(/^\d+\.\s*/, '')}
                 </a>
@@ -426,7 +425,7 @@ function OgsPaperPage() {
 
           <section className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/50">
             <div className="flex items-center gap-2">
-              <FaCodeBranch className="text-emerald-500" />
+              <FaCodeBranch className="text-violet-500" />
               <h2 className="font-display text-base font-semibold text-slate-900">
                 Technical Links
               </h2>
@@ -438,7 +437,7 @@ function OgsPaperPage() {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700 transition hover:border-cyan-300/60 hover:text-cyan-700"
+                  className="rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700 transition hover:border-violet-300/60 hover:text-violet-700"
                 >
                   {label}
                 </a>
@@ -450,7 +449,7 @@ function OgsPaperPage() {
             href="https://github.com/medyassinekhlif"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-between gap-3 rounded-lg bg-cyan-700 p-4 text-sm font-semibold text-white transition hover:bg-cyan-800"
+            className="flex items-center justify-between gap-3 rounded-lg bg-violet-700 p-4 text-sm font-semibold text-white transition hover:bg-violet-800"
           >
             <span className="inline-flex items-center gap-2">
               <FaGithub /> GitHub
