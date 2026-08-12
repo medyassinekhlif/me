@@ -341,8 +341,8 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
 
 
 function OgsPaperPage() {
-  const logoUrl = 'https://github.com/medyassinekhlif/open-generative-studios/blob/main/logo.png'
-  const navLogoUrl = 'https://github.com/medyassinekhlif/open-generative-studios/blob/main/nav-logo.png'
+  const logoUrl = 'https://raw.githubusercontent.com/medyassinekhlif/open-generative-studios/refs/heads/main/logo.png'
+  const navLogoUrl = 'https://raw.githubusercontent.com/medyassinekhlif/open-generative-studios/refs/heads/main/nav-logo.png'
   const blocks = useMemo(() => parseMarkdown(paperSource), [])
   const outline = blocks.filter((block): block is HeadingBlock => block.kind === 'heading' && block.level === 2)
 
