@@ -236,12 +236,6 @@ function PortfolioPage() {
               <p className="mt-4 text-base text-slate-200 md:text-lg">
                 Building scalable full-stack products and intelligent software systems.
               </p>
-              <a
-                href={ogsPageUrl}
-                className="mt-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/50 bg-cyan-300/15 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:scale-105"
-              >
-                Read the OGS report <FaArrowRight className="text-xs" />
-              </a>
 
               <div className="mt-6 space-y-3 text-sm text-slate-200">
                 <p className="flex items-center gap-3">
@@ -365,7 +359,7 @@ function PortfolioPage() {
             Bachelor's Degree in Software Engineering (Expected June 2026)
           </p>
           <p className="mt-1 text-slate-300">Faculty of Sciences, Monastir</p>
-          <p className="mt-1 text-slate-300">GPA: 15.13/20 | Top 7% of the cohort (256 students)</p>
+          <p className="mt-1 text-slate-300">GPA: 16.56/20 | Top 2.8% of the cohort (Rank: 7/254)</p>
           <p className="mt-4 text-slate-300">
             Relevant Coursework: Algorithms & Data Structures, Object-Oriented Programming,
             Operating Systems, Database Systems, Artificial Intelligence, Machine Learning,
@@ -407,11 +401,11 @@ function PortfolioPage() {
             className="mt-5 block overflow-hidden rounded-2xl border border-cyan-300/30 bg-slate-950/90 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/60"
           >
             <div className="grid gap-0 md:grid-cols-[180px_1fr]">
-              <div className="flex items-center justify-center bg-gradient-to-br from-cyan-300/15 via-slate-950 to-emerald-300/10 p-6">
+              <div className="flex items-center justify-center bg-white">
                 <img
                   src={ogsLogoUrl}
                   alt="Open Generative Studios"
-                  className="h-24 w-24 rounded-2xl bg-slate-950/60 object-contain p-3 shadow-lg"
+                  className="h-24 w-24 rounded-2xl object-contain shadow-lg"
                 />
               </div>
               <div className="p-5 md:p-6">
@@ -419,9 +413,7 @@ function PortfolioPage() {
                   <h3 className="font-display text-xl font-semibold text-cyan-100">
                     Open Generative Studios
                   </h3>
-                  <span className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.18em] text-cyan-200">
-                    Research post
-                  </span>
+                  
                 </div>
                 <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
                   Read the engineering and research behind Open Generative Studios: a CPU-only,

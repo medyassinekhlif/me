@@ -347,7 +347,7 @@ function OgsPaperPage() {
   const outline = blocks.filter((block): block is HeadingBlock => block.kind === 'heading' && block.level === 2)
 
   return (
-    <main className="min-h-screen bg-slate-950 font-body text-slate-100">
+    <main className="min-h-screen font-body text-slate-100">
       <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
         <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8">
           <a
