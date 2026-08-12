@@ -339,7 +339,6 @@ function PaperBlock({ block }: { block: ParsedBlock }) {
   return <p className="text-base leading-8 text-slate-700">{renderInline(block.text)}</p>
 }
 
-
 function OgsPaperPage() {
   const logoUrl = 'https://raw.githubusercontent.com/medyassinekhlif/open-generative-studios/refs/heads/main/logo.png'
   const navLogoUrl = 'https://raw.githubusercontent.com/medyassinekhlif/open-generative-studios/refs/heads/main/nav-logo.png'
