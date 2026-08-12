@@ -280,11 +280,10 @@ function PortfolioPage() {
                     key={card.id}
                     type="button"
                     onClick={() => setActiveCard(card.id)}
-                    className={`rounded-xl border p-4 text-left transition duration-200 hover:-translate-y-1 hover:shadow-lg ${
-                      activeCard === card.id
+                    className={`rounded-xl border p-4 text-left transition duration-200 hover:-translate-y-1 hover:shadow-lg ${activeCard === card.id
                         ? 'border-emerald-300/70 bg-emerald-300/15'
                         : 'border-white/15 bg-slate-900/45'
-                    }`}
+                      }`}
                   >
                     <p className="text-sm font-semibold text-slate-100">{card.title}</p>
                     <p className="mt-1 text-xs text-slate-300">{card.period}</p>
@@ -401,11 +400,11 @@ function PortfolioPage() {
             className="mt-5 block overflow-hidden rounded-2xl border border-cyan-300/30 bg-slate-950/90 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/60"
           >
             <div className="grid gap-0 md:grid-cols-[180px_1fr]">
-              <div className="flex items-center justify-center bg-white">
+              <div className="h-48 bg-white md:h-full">
                 <img
                   src={ogsLogoUrl}
                   alt="Open Generative Studios"
-                  className="h-24 w-24 rounded-2xl object-contain shadow-lg"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div className="p-5 md:p-6">
@@ -413,7 +412,7 @@ function PortfolioPage() {
                   <h3 className="font-display text-xl font-semibold text-cyan-100">
                     Open Generative Studios
                   </h3>
-                  
+
                 </div>
                 <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
                   Read the engineering and research behind Open Generative Studios: a CPU-only,
