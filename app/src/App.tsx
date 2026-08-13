@@ -415,7 +415,7 @@ function PortfolioPage() {
             className="mt-5 block overflow-hidden rounded-2xl border border-cyan-300/30 bg-slate-950/90 transition duration-200 hover:-translate-y-1 hover:border-cyan-300/60"
           >
             <div className="grid gap-0 md:grid-cols-[180px_1fr]">
-              <div className="flex h-48 items-center justify-center overflow-hidden bg-white md:h-full">
+              <div className="flex h-48 px-4 items-center justify-center overflow-hidden bg-white md:h-full">
                 <img
                   src={ogsLogoUrl}
                   alt="Open Generative Studios"
