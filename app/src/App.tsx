@@ -434,11 +434,6 @@ function PortfolioPage() {
                   reproducible symbolic music pipeline built around MIDI, SFZ, sfizz, and a
                   license-conscious deployment model.
                 </p>
-                <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-cyan-300/10 px-3 py-1.5 text-cyan-100">
-                    Read the paper <FaArrowRight className="text-xs" />
-                  </span>
-                </div>
               </div>
             </div>
           </a>
