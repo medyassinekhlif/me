@@ -376,7 +376,7 @@ function OgsPaperPage() {
           <img
             src={logoUrl}
             alt="Logo"
-            className="pointer-events-none absolute left-0 -bottom-10 z-0 h-72 w-auto -rotate-12 opacity-20 sm:h-80"
+            className="pointer-events-none absolute left-0 -bottom-10 z-0 h-72 w-auto opacity-20 sm:h-80"
           />
           <div className="max-w-4xl relative z-10">
             <h1 className="mt-4 font-display text-4xl font-bold leading-tight text-slate-900 md:text-6xl">
