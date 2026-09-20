@@ -166,9 +166,9 @@ function PortfolioPage() {
         }, [])
   const youtubeVideoUrl = 'https://www.youtube.com/watch?v=TL5n5-ucbo8&t=31s'
   const youtubeEmbedUrl = 'https://www.youtube.com/embed/TL5n5-ucbo8?start=31'
-  const ogsPlatformUrl = 'https://opengenerativestudios.studio/'
+  const ogsProjectVideoUrl = 'https://www.youtube.com/watch?v=r_ogp14cvyg&t'
   const ogsLogoUrl =
-    'https://opengenerativestudios.studio/_next/image?url=%2Fassets%2Fnav-logo.png&w=384&q=75'
+    'https://raw.githubusercontent.com/medyassinekhlif/open-generative-studios/refs/heads/main/nav-logo.png'
   const logoUrl = `${import.meta.env.BASE_URL}favicon.png`
   const ogsPageUrl = `${import.meta.env.BASE_URL}ogs`
 
@@ -440,12 +440,12 @@ function PortfolioPage() {
 
           <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
             <a
-              href={ogsPlatformUrl}
+              href={ogsProjectVideoUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-300/10 px-4 py-1.5 text-emerald-100 transition hover:scale-105"
             >
-              <FaCodeBranch /> Platform
+              <FaYoutube /> Project video
             </a>
             <a
               href={ogsPageUrl}
