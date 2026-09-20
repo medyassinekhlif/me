@@ -41,23 +41,37 @@ function App() {
   return <PortfolioPage />
 }
 
+function canUseWebGL() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return false
+  }
+
+  const canvas = document.createElement('canvas')
+  const context = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+
+  return Boolean(context)
+}
+
 function PortfolioPage() {
   const sceneUrl = 'https://prod.spline.design/cZOzfWQ60bSXwxH3/scene.splinecode'
   const [activeCard, setActiveCard] = useState('EITECH')
-  const [showSpline, setShowSpline] = useState(() => {
-    if (typeof window === 'undefined') {
-      return false
-    }
-    return window.matchMedia('(min-width: 768px)').matches
-  })
+  const [showSpline, setShowSpline] = useState(false)
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)')
-    const handleViewportChange = (event: MediaQueryListEvent) => {
-      setShowSpline(event.matches)
+    if (typeof window === 'undefined') {
+      return
     }
 
-    setShowSpline(mediaQuery.matches)
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
+    const handleViewportChange = (event: MediaQueryListEvent) => {
+      setShowSpline(event.matches && canUseWebGL())
+    }
+
+    const updateSplineVisibility = () => {
+      setShowSpline(mediaQuery.matches && canUseWebGL())
+    }
+
+    updateSplineVisibility()
     mediaQuery.addEventListener('change', handleViewportChange)
 
     return () => {
